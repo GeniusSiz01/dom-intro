@@ -2,30 +2,51 @@ const calculateBtn = document.querySelector(".calculateBtn")
 //get a reference to the calculate button
 
 const billTotal = document.querySelector(".billTotal")
+alert(billTotal.classList)
 //get a reference to the billTotal element
 
 
 const billString = document.querySelector(".billString")
 //get a reference to the billTotal element
+const totalElement = document.querySelector(".total")
+// totalElement.style.color = "red"
+
 
 calculateBtn.addEventListener("click", calculateBill)
 function calculateBill() {
 
-    var callsMade = billString.value
-    var total=0;
-    var bill=callsMade.split(",");
-    for(var i=0; i<bill.length;i++) {
-      var lists=bill[i];
-      
-      if(lists.includes("l")) {
-        total+=2.75;
-      }
-      if(lists.includes("m")) {
-        total+= 0.75;
-      }
+  var callsMade = billString.value
+  var total = 0;
+  var bill = callsMade.split(",");
+  for (var i = 0; i < bill.length; i++) {
+    var lists = bill[i];
+
+    if (lists.includes("l")) {
+      total += 2.75;
     }
-    console.log(total)
-    billTotal.innerHTML = total
+    if (lists.includes("m")) {
+      total += 0.75;
+    }
+  }
+  redCheck(total)
+  console.log(total)
+  billTotal.innerHTML = total.toFixed(2)
+}
+
+function redCheck(total) {
+  if (total > 4) {
+    billTotal.classList.remove("warning")
+    billTotal.classList.add("danger")
+
+  }
+
+  else if (total < 4 && total > 2) {
+    billTotal.classList.remove("danger")
+    billTotal.classList.add("warning")
+  }
+  else {
+    billTotal.classList.remove("warning")
+  }
 }
 
 

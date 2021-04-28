@@ -1,5 +1,8 @@
+const billTypeText = document.querySelector("billTypeText")
 // get a reference to the textbox where the bill type is to be entered
+    // alert("clicked")
 
+const addToBillBtn = document.querySelector("addToBillBtn")
 //get a reference to the add button
 
 //create a variable that will keep track of the total bill
