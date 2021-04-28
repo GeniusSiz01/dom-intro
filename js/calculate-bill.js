@@ -2,7 +2,7 @@ const calculateBtn = document.querySelector(".calculateBtn")
 //get a reference to the calculate button
 
 const billTotal = document.querySelector(".billTotal")
-alert(billTotal.classList)
+// alert(billTotal.classList)
 //get a reference to the billTotal element
 
 
@@ -28,19 +28,19 @@ function calculateBill() {
       total += 0.75;
     }
   }
-  redCheck(total)
+  roundedTotal(total)
   console.log(total)
   billTotal.innerHTML = total.toFixed(2)
 }
 
-function redCheck(total) {
-  if (total > 4) {
+function roundedTotal(total) {
+  if (total > 30) {
     billTotal.classList.remove("warning")
     billTotal.classList.add("danger")
 
   }
 
-  else if (total < 4 && total > 2) {
+  if (total < 30 && total > 20) {
     billTotal.classList.remove("danger")
     billTotal.classList.add("warning")
   }
