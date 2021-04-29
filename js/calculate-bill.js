@@ -35,7 +35,7 @@ function calculateBill() {
 
 function roundedTotal(total) {
   if (total > 30) {
-    billTotal.classList.remove("warning")
+    // billTotal.classList.remove("warning")
     billTotal.classList.add("danger")
 
   }
