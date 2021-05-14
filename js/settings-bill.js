@@ -43,6 +43,9 @@ function addBtns(){
 if (checkedRadioBtn){
     var billItemType = checkedRadioBtn.value
 
+    totalElementSet.classList.remove("danger")
+    totalElementSet.classList.remove("warning")
+
     
     if ( billItemType === "call") {
         callTotalSettings += callCostSetting
